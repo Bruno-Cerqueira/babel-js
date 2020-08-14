@@ -1,0 +1,54 @@
+:root {
+  --bg-red: #ff055c;
+  --bg-darkgray: #474445;
+  --bg-black: #000000;
+  --bg-white: #ffffff;
+  --bg-lightgreen: #51f57d;
+  --bg-shadow: rgba(116, 117, 116, .5);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  height: 90vh;
+  background: var(--bg-red);
+}
+
+.left-pokedex {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-screen {
+  height: 80%;
+  margin: 20px;
+  padding: 14px;
+  border: 2px solid var(--bg-black);
+  background-color: var(--bg-white);
+}
+
+.screen {
+  height: 100%;
+  border: 2px solid var(--bg-black);
+  background-color: var(--bg-darkgray);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+button {
+  background-color: var(--bg-lightgreen);
+}
