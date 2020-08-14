@@ -14,3 +14,5 @@ npm start
 
 * npm 6.13.4
 * http-server 0.12.3
+* babel 7.10.5
+* browserify 16.5.2

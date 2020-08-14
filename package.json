@@ -1,13 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "build": "babel src/ -d dist/",
-    "start": "http-server -p 8080 ./dist"
+    "build": "browserify ./src/index.js -o ./dist/bundle.js -t babelify",
+    "start": "http-server -c-1 -p 8080 ./dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.2",
     "core-js": "^3.6.5",
     "http-server": "^0.12.3",
     "regenerator-runtime": "^0.13.7"
