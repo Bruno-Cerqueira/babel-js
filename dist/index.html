@@ -9,19 +9,22 @@
   </head>
   <body>
     <div class="pokedex">
-      <div class="left-pokedex">
-        <div class="wrapper-screen">
-          <div class="screen"></div>
-        </div>
-        <div class="actions">
-          <input type="text" id="searched-pokemon">
-          <button id="searched-click">search</button>
+      <div class="wrapper-screen">
+        <div class="screen">
+          <p>Id: <span id="id"></span></p>
+          <ul>
+            <li>Name: <span id="name"></span></li>
+            <li>Base Experience: <span id="base_experience"></span></li>
+            <li>Height: <span id="height"></span></li>
+            <li>Weight: <span id="weight"></span></li>
+            <li>Types: <span id="types"></span></li>
+          </ul>
+          <img id="sprites" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="poke image">
         </div>
       </div>
-      <div class="right-pokedex">
-        <div class="wrapper-screen">
-          <div class="screen"></div>
-        </div>
+      <div class="actions">
+        <input type="text" id="searched-pokemon" placeholder="Pokemon by id or name">
+        <button id="searched-click">search</button>
       </div>
     </div>
     <script src="bundle.js"></script>

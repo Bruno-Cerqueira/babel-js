@@ -17,16 +17,11 @@ body {
 }
 
 .pokedex {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 90%;
-  height: 90vh;
-  background: var(--bg-red);
-}
-
-.left-pokedex {
   display: flex;
   flex-direction: column;
+  width: 350px;
+  height: 90vh;
+  background: var(--bg-red);
 }
 
 .wrapper-screen {
@@ -41,6 +36,19 @@ body {
   height: 100%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-darkgray);
+  color: var(--bg-white);
+  position: relative;
+}
+
+.screen > p {
+  position: absolute;
+  right: 55px;
+}
+
+#sprites {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
 }
 
 .actions {

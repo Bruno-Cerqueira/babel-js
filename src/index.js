@@ -26,12 +26,33 @@ const getPokemon = name => {
         "base_experience",
         "height",
         "weight",
-        "types"
+        "types",
+        "sprites"
        ]
       const pokeAttributes = Util.filterObj(data, extractedData);
-      console.log(new Pokemon(pokeAttributes))
+      const searchedPokemon = new Pokemon(pokeAttributes);
+      
+      setPokemon(searchedPokemon);
     })
     .catch(_ => {
-      alert("Pokemon not found!")
+      alert("Pokemon not found!");
     })
+}
+
+const setPokemon = (searchedPokemon) => {
+  Object.keys(searchedPokemon).forEach(pokeAttr => {
+    let node = document.getElementById(pokeAttr);
+    if(pokeAttr === 'sprites') {
+      const src = searchedPokemon[pokeAttr].front_default;
+      node.src = src;
+    } else if (pokeAttr === "types"){
+      let types = [];
+      searchedPokemon[pokeAttr].forEach(type => {
+        types.push(type.type.name)
+      })
+      node.textContent = types.join(', ');
+    } else {
+      node.textContent = searchedPokemon[pokeAttr];
+    }
+  })
 }
