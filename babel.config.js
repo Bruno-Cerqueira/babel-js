@@ -1,6 +1,6 @@
 const presets = [
   [
-    "@babel/env",
+    "@babel/typescript",
     {
       targets: {
         firefox: "20",

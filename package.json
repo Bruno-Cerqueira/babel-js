@@ -1,20 +1,24 @@
 {
   "private": true,
   "scripts": {
-    "build": "browserify ./src/index.js -o ./dist/bundle.js -t babelify",
+    "build": "browserify ./src/index.ts -p [ tsify ] > ./dist/bundle.js",
+    "check-types": "tsc ./src/*.ts",
     "start": "http-server -c-1 -p 8080 ./dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "babelify": "^10.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
     "browserify": "^16.5.2",
     "core-js": "^3.6.5",
     "http-server": "^0.12.3",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.10.4"
+    "@babel/polyfill": "^7.10.4",
+    "tsify": "^5.0.1"
   }
 }

@@ -1,5 +1,5 @@
-import { Util } from './util.js';
-import { Pokemon } from './pokemon.js';
+import { Util } from './util';
+import { Pokemon } from './pokemon';
 
 
 const status = response => {
@@ -11,7 +11,7 @@ const json = response => response.json();
 
 
 document.getElementById("searched-click").addEventListener("click", () => {
-  const pokeName = document.getElementById("searched-pokemon").value;
+  const pokeName = (document.getElementById("searched-pokemon") as HTMLInputElement).value;
   getPokemon(pokeName);
 })
 
@@ -41,7 +41,7 @@ const getPokemon = name => {
 
 const setPokemon = (searchedPokemon) => {
   Object.keys(searchedPokemon).forEach(pokeAttr => {
-    let node = document.getElementById(pokeAttr);
+    let node = document.getElementById(pokeAttr) as HTMLInputElement;
     if(pokeAttr === 'sprites') {
       const src = searchedPokemon[pokeAttr].front_default;
       node.src = src;
