@@ -1,4 +1,4 @@
-import IPokeType from './poketype.interface'
+import IPokeType from './poketype.interface';
 
 export default interface IPokemon {
   id: number;

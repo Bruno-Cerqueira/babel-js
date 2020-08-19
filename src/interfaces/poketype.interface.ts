@@ -1,4 +1,4 @@
 export default interface IPokeType {
   slot: number;
-  types: { name: string, url: string }
+  types: { name: string; url: string };
 }
