@@ -3,7 +3,9 @@
   "scripts": {
     "build": "browserify ./src/index.ts -p [ tsify ] > ./dist/bundle.js",
     "check-types": "tsc ./src/*.ts",
-    "start": "http-server -c-1 -p 8080 ./dist"
+    "start": "http-server -c-1 -p 8080 ./dist",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -11,8 +13,11 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "@typescript-eslint/parser": "^3.9.1",
     "browserify": "^16.5.2",
     "core-js": "^3.6.5",
+    "eslint": "^7.7.0",
     "http-server": "^0.12.3",
     "regenerator-runtime": "^0.13.7",
     "typescript": "^3.9.7"

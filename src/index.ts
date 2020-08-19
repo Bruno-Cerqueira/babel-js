@@ -1,5 +1,6 @@
 import { Util } from './util';
 import { Pokemon } from './pokemon';
+import IPokemon from './interfaces/pokemon.interface';
 
 
 const status = response => {
@@ -28,25 +29,25 @@ const getPokemon = name => {
         "weight",
         "types",
         "sprites"
-       ]
+      ]
       const pokeAttributes = Util.filterObj(data, extractedData);
-      const searchedPokemon = new Pokemon(pokeAttributes);
+      const searchedPokemon = new Pokemon(pokeAttributes as IPokemon);
       
       setPokemon(searchedPokemon);
     })
-    .catch(_ => {
+    .catch(() => {
       alert("Pokemon not found!");
     })
 }
 
 const setPokemon = (searchedPokemon) => {
   Object.keys(searchedPokemon).forEach(pokeAttr => {
-    let node = document.getElementById(pokeAttr) as HTMLInputElement;
+    const node = document.getElementById(pokeAttr) as HTMLInputElement;
     if(pokeAttr === 'sprites') {
       const src = searchedPokemon[pokeAttr].front_default;
       node.src = src;
     } else if (pokeAttr === "types"){
-      let types = [];
+      const types = [];
       searchedPokemon[pokeAttr].forEach(type => {
         types.push(type.type.name)
       })

@@ -19,8 +19,8 @@ body {
 .pokedex {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 90vh;
+  width: 400px;
+  height: 250px;
   background: var(--bg-red);
 }
 
