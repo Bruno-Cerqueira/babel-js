@@ -8,6 +8,11 @@
     "lint-and-fix": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-format && npm run lint"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
@@ -22,6 +27,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "http-server": "^0.12.3",
+    "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "regenerator-runtime": "^0.13.7",
     "typescript": "^3.9.7"
